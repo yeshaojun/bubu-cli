@@ -17,7 +17,8 @@
     "test": "node ./__tests__/init.test.js"
   },
   "dependencies": {
-    "@bubu/command": "^0.0.0"
+    "@bubu/command": "^0.0.0",
+    "@bubu/utils": "^0.0.0"
   },
   "type": "module"
 }
