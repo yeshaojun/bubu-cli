@@ -43,6 +43,13 @@ function getAddType() {
 function getAddName() {
   return makeInput({
     message: "请输入项目名称",
+    validate(name) {
+      if (name.length) {
+        return true;
+      } else {
+        return "项目名称必须输入";
+      }
+    },
   });
 }
 

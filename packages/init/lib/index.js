@@ -1,6 +1,6 @@
 import Command from "@bubu/command";
 import createTemplate from "./createTemplate.js";
-import downloadTemplate from "./createTemplate.js"
+import downloadTemplate from "./downloadTemplate.js";
 class InitCommand extends Command {
   get command() {
     return "init [name]";
@@ -22,7 +22,7 @@ class InitCommand extends Command {
     const selectTemplate = await createTemplate(name, option);
     console.log("template", selectTemplate);
     // 2.下载项目到缓存目录
-    downloadTemplate(selectTemplate)
+    downloadTemplate(selectTemplate);
     // 3，安装项目模板到项目目录
   }
 }
