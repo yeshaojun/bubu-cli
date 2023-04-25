@@ -17,6 +17,8 @@ function makeCecheDir(targetPath) {
 
 async function downloadAddTemplate(targetPath, selectTemplate) {
   const { npmName, version } = selectTemplate;
+  const installCommand = "npm";
+  const installArgs = ["install"];
 }
 
 async function downloadTemplate(selectTemplate) {

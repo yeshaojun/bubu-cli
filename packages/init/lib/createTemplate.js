@@ -47,7 +47,7 @@ function getAddName() {
       if (name.length) {
         return true;
       } else {
-        return "项目名称必须输入";
+        return "项目名称必须输入:";
       }
     },
   });
