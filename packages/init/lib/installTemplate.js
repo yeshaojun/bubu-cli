@@ -1,6 +1,6 @@
 import fse from "fs-extra";
 import path from "node:path";
-import { log } from "@bubu/utils";
+import { log, makeList, makeInput } from "@bubu/utils";
 import { pathExistsSync } from "path-exists";
 import ora from "ora";
 import { glob } from "glob";
@@ -42,7 +42,10 @@ async function ejsRender(installDir, template, name) {
   const pluginPath = getPluginFilePath(targetPath, template);
   if (pathExistsSync(pluginPath)) {
     const pluginFn = await import(pluginPath).default;
-    data = pluginFn();
+    data = pluginFn({
+      makeList,
+      makeInput,
+    });
   }
   console.log("files", files);
   files.map((file) => {
