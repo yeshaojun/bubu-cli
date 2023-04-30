@@ -3,7 +3,7 @@ import { pathExistsSync } from "path-exists";
 import fse from "fs-extra";
 import { printErrorLog, log } from "@bubu/utils";
 import ora from "ora";
-import { execa } from "execa"
+import { execa } from "execa";
 
 function getCacheDir(targetPath) {
   return path.resolve(targetPath, "node_modules");
@@ -20,7 +20,7 @@ async function downloadAddTemplate(targetPath, selectTemplate) {
   const { npmName, version } = selectTemplate;
   const installCommand = "npm";
   const installArgs = ["install", `${npmName}@${version}`];
-  await execa(installCommand, installArgs, {cwd: targetPath})
+  await execa(installCommand, installArgs, { cwd: targetPath });
 }
 
 async function downloadTemplate(selectTemplate) {
@@ -29,8 +29,8 @@ async function downloadTemplate(selectTemplate) {
   const spinner = ora("正在下载模板....").start();
   try {
     await downloadAddTemplate(targetPath, template);
-    spinner.stop()
-    log.info('下载成功！')
+    spinner.stop();
+    log.info("下载成功！");
   } catch (error) {
     spinner.stop();
     printErrorLog(error);

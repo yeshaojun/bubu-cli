@@ -13,7 +13,7 @@ class InitCommand extends Command {
 
   get options() {
     return [
-      ["-f,--force", "是否强制更新", false],
+      ["--f,--force", "是否强制更新", false],
       ["--d,--debug", "调试模式", false],
     ];
   }
@@ -22,11 +22,11 @@ class InitCommand extends Command {
     console.log("template", option);
     // 1.选择项目模板，生成项目
     const selectTemplate = await createTemplate(name, option);
-    
+
     // 2.下载项目到缓存目录
     downloadTemplate(selectTemplate);
     // 3，安装项目模板到项目目录
-    installTemplate(selectTemplate, option)
+    installTemplate(selectTemplate, option);
   }
 }
 
