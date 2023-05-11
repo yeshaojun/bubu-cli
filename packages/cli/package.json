@@ -17,6 +17,10 @@
     "lib",
     "bin"
   ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "test": "jest"
   },
@@ -39,5 +43,5 @@
     "execa": "^7.1.1",
     "jest": "^29.5.0"
   },
-  "gitHead": "ca8060b8edef1185cb8e22519bc5379c518aaa3a"
+  "gitHead": "4160f5549a3e8970b41ec8e8a46fdcdcfb39722c"
 }

@@ -16,6 +16,10 @@
   "scripts": {
     "test": "node ./__tests__/init.test.js"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "dependencies": {
     "@bubu/command": "^0.0.1",
     "@bubu/utils": "^0.0.3",
@@ -27,5 +31,5 @@
     "path-exists": "^5.0.0"
   },
   "type": "module",
-  "gitHead": "ca8060b8edef1185cb8e22519bc5379c518aaa3a"
+  "gitHead": "4160f5549a3e8970b41ec8e8a46fdcdcfb39722c"
 }

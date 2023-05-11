@@ -23,6 +23,10 @@
     "npmlog": "^7.0.1",
     "url-join": "^5.0.0"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "type": "module",
-  "gitHead": "ca8060b8edef1185cb8e22519bc5379c518aaa3a"
+  "gitHead": "4160f5549a3e8970b41ec8e8a46fdcdcfb39722c"
 }
