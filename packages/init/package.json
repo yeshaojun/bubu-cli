@@ -4,7 +4,7 @@
   "description": "> TODO: description",
   "author": "yeshaojun <yeshaojun5056@163.com>",
   "homepage": "",
-  "license": "ISC",
+  "license": "MIT",
   "main": "lib/index.js",
   "directories": {
     "lib": "lib",
@@ -26,5 +26,6 @@
     "ora": "^6.3.0",
     "path-exists": "^5.0.0"
   },
-  "type": "module"
+  "type": "module",
+  "gitHead": "ca8060b8edef1185cb8e22519bc5379c518aaa3a"
 }
