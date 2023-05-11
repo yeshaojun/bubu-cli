@@ -1,6 +1,6 @@
 {
   "name": "@bubu/init",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "> TODO: description",
   "author": "yeshaojun <yeshaojun5056@163.com>",
   "homepage": "",
@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@bubu/command": "^0.0.1",
-    "@bubu/utils": "^0.0.2",
+    "@bubu/utils": "^0.0.3",
     "ejs": "^3.1.9",
     "execa": "^7.1.1",
     "fs-extra": "^11.1.1",
