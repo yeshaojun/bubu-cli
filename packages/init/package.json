@@ -1,6 +1,6 @@
 {
   "name": "@bubu/init",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "> TODO: description",
   "author": "yeshaojun <yeshaojun5056@163.com>",
   "homepage": "",
@@ -21,7 +21,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "@bubu/command": "^0.0.1",
+    "@bubu/command": "^0.0.5",
     "@bubu/utils": "^0.0.4",
     "ejs": "^3.1.9",
     "execa": "^7.1.1",
