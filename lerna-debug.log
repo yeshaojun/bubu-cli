@@ -1,13 +1,4 @@
-0 silly argv {
-0 silly argv   _: [ 'add' ],
-0 silly argv   globs: [ 'packages/utils' ],
-0 silly argv   lernaVersion: '5.5.4',
-0 silly argv   '$0': 'C:\\Users\\ye\\AppData\\Roaming\\npm\\node_modules\\lerna\\cli.js',
-0 silly argv   pkg: 'urlJoin'
-0 silly argv }
-1 notice cli v5.5.4
-2 verbose rootPath C:\study\cli-bu
-3 error HttpErrorGeneral: 404 Not Found - GET https://registry.npmjs.org/urlJoin - Not found
-3 error     at C:\study\cli-bu\node_modules\npm-registry-fetch\lib\check-response.js:95:15
-3 error     at processTicksAndRejections (node:internal/process/task_queues:96:5)
-3 error     at async RegistryFetcher.packument (C:\study\cli-bu\node_modules\pacote\lib\registry.js:92:19)
+48 error Error: Command failed with exit code 128: git push --follow-tags --no-verify --atomic origin master
+48 error fatal: 无法访问 'https://github.com/yeshaojun/bubu-cli.git/'：Failed to connect to github.com port 443: Operation timed out
+48 error     at makeError (/Users/sjye/code/bubu-cli/node_modules/execa/lib/error.js:60:11)
+48 error     at handlePromise (/Users/sjye/code/bubu-cli/node_modules/execa/index.js:118:26)
