@@ -1,6 +1,6 @@
 {
   "name": "@bubu/cli",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "@bubu/cli",
   "author": "yeshaojun <yeshaojun5056@163.com>",
   "homepage": "",
@@ -21,7 +21,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@bubu/init": "^0.0.0",
+    "@bubu/init": "^0.0.1",
     "@bubu/utils": "^0.0.0",
     "chalk": "^5.2.0",
     "commander": "^10.0.0",

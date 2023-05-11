@@ -1,6 +1,6 @@
 {
   "name": "@bubu/init",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "> TODO: description",
   "author": "yeshaojun <yeshaojun5056@163.com>",
   "homepage": "",
@@ -17,7 +17,7 @@
     "test": "node ./__tests__/init.test.js"
   },
   "dependencies": {
-    "@bubu/command": "^0.0.0",
+    "@bubu/command": "^0.0.1",
     "@bubu/utils": "^0.0.0",
     "ejs": "^3.1.9",
     "execa": "^7.1.1",
