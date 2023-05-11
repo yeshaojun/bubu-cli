@@ -1,6 +1,6 @@
 {
   "name": "@bubu/init",
-  "version": "0.0.4",
+  "version": "0.0.1",
   "description": "> TODO: description",
   "author": "yeshaojun <yeshaojun5056@163.com>",
   "homepage": "",
@@ -31,5 +31,5 @@
     "path-exists": "^5.0.0"
   },
   "type": "module",
-  "gitHead": "4160f5549a3e8970b41ec8e8a46fdcdcfb39722c"
+  "gitHead": "021c450bb8757776c8a2efb4c3a21b879a859219"
 }
