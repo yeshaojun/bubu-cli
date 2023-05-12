@@ -1,10 +1,6 @@
-15 error Error: Command failed with exit code 1: git remote update
-15 error fatal: 无法访问 'https://github.com/yeshaojun/bubu-cli.git/'：HTTP/2 stream 1 was not closed cleanly before end of the underlying stream
-15 error error: 不能获取 origin
-15 error 正在获取 origin
-15 error     at makeError (/Users/sjye/code/bubu-cli/node_modules/execa/lib/error.js:60:11)
-15 error     at Function.module.exports.sync (/Users/sjye/code/bubu-cli/node_modules/execa/index.js:194:17)
-15 error     at Object.execSync (/Users/sjye/code/bubu-cli/node_modules/@lerna/child-process/index.js:39:16)
-15 error     at updateRemote (/Users/sjye/code/bubu-cli/node_modules/@lerna/version/lib/is-behind-upstream.js:34:16)
-15 error     at isBehindUpstream (/Users/sjye/code/bubu-cli/node_modules/@lerna/version/lib/is-behind-upstream.js:16:3)
-15 error     at VersionCommand.initialize (/Users/sjye/code/bubu-cli/node_modules/@lerna/version/index.js:156:9)
+54 error Error: Command failed with exit code 128: git tag v0.0.2 -m v0.0.2
+54 error fatal: 标签 'v0.0.2' 已存在
+54 error     at makeError (/Users/sjye/code/bubu-cli/node_modules/execa/lib/error.js:60:11)
+54 error     at handlePromise (/Users/sjye/code/bubu-cli/node_modules/execa/index.js:118:26)
+54 error     at processTicksAndRejections (node:internal/process/task_queues:96:5)
+54 error     at async Promise.all (index 0)
