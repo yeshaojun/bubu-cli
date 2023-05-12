@@ -1,6 +1,6 @@
 {
   "name": "@bubu/utils",
-  "version": "0.0.5",
+  "version": "0.0.0",
   "description": "> TODO: description",
   "author": "yeshaojun <yeshaojun5056@163.com>",
   "homepage": "",
@@ -27,6 +27,5 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "type": "module",
-  "gitHead": "021c450bb8757776c8a2efb4c3a21b879a859219"
+  "type": "module"
 }
