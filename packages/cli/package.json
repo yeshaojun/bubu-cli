@@ -17,10 +17,6 @@
     "lib",
     "bin"
   ],
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
   "scripts": {
     "test": "jest"
   },

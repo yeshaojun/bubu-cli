@@ -16,10 +16,6 @@
   "scripts": {
     "test": "node ./__tests__/init.test.js"
   },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
   "dependencies": {
     "@bubu-cli/command": "^0.0.1",
     "@bubu-cli/utils": "^0.0.1",
