@@ -1,6 +1,6 @@
 {
-  "name": "@bubu/utils",
-  "version": "0.1.0",
+  "name": "@bubu-cli/utils",
+  "version": "0.0.1",
   "description": "> TODO: description",
   "author": "yeshaojun <yeshaojun5056@163.com>",
   "homepage": "",
@@ -23,9 +23,6 @@
     "npmlog": "^7.0.1",
     "url-join": "^5.0.0"
   },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
-  "type": "module"
+  "type": "module",
+  "gitHead": "a368d2d524908b6f412fd11ad8f8d2ffb6babfc7"
 }

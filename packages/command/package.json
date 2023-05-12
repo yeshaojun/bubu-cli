@@ -1,6 +1,6 @@
 {
-  "name": "@bubu/command",
-  "version": "0.1.0",
+  "name": "@bubu-cli/command",
+  "version": "0.0.1",
   "description": "> TODO: description",
   "author": "yeshaojun <yeshaojun5056@163.com>",
   "homepage": "",
@@ -24,5 +24,5 @@
   "dependencies": {
     "execa": "^7.1.1"
   },
-  "gitHead": "c385193854f6d38493ed8ced3be01be80cce51c6"
+  "gitHead": "a368d2d524908b6f412fd11ad8f8d2ffb6babfc7"
 }

@@ -1,4 +1,4 @@
-import createInitCommand from "@bubu/init";
+import createInitCommand from "@bubu-cli/init";
 import "./exception.js";
 import createCLI from "./createCli.js";
 

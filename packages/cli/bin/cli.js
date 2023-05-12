@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import importLocal from "import-local";
-import { log } from "@bubu/utils";
+import { log } from "@bubu-cli/utils";
 import enrty from "../lib/index.js";
 import { filename } from "dirname-filename-esm";
 

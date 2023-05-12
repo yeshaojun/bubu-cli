@@ -1,4 +1,4 @@
-import { isDebug, log } from "@bubu/utils";
+import { isDebug, log } from "@bubu-cli/utils";
 
 function printErrorLog(e, type) {
   if (isDebug()) {

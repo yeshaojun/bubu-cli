@@ -1,6 +1,6 @@
 import fse from "fs-extra";
 import path from "node:path";
-import { log, makeList, makeInput } from "@bubu/utils";
+import { log, makeList, makeInput } from "@bubu-cli/utils";
 import { pathExistsSync } from "path-exists";
 import ora from "ora";
 import { glob } from "glob";

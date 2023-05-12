@@ -1,7 +1,7 @@
 import path from "node:path";
 import { pathExistsSync } from "path-exists";
 import fse from "fs-extra";
-import { printErrorLog, log } from "@bubu/utils";
+import { printErrorLog, log } from "@bubu-cli/utils";
 import ora from "ora";
 import { execa } from "execa";
 

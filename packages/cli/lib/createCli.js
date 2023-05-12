@@ -4,7 +4,7 @@ import fse from "fs-extra";
 import semver from "semver";
 import chalk from "chalk";
 import { dirname } from "dirname-filename-esm";
-import { log } from "@bubu/utils";
+import { log } from "@bubu-cli/utils";
 
 const __dirname = dirname(import.meta);
 const pkgPath = path.resolve(__dirname, "../package.json");

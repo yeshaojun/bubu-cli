@@ -1,5 +1,5 @@
 import { resolve } from "path";
-import { log, makeList, makeInput, getLatestVersion } from "@bubu/utils";
+import { log, makeList, makeInput, getLatestVersion } from "@bubu-cli/utils";
 import { homedir } from "node:os";
 const ADD_TYPE_PROJECT = "project";
 const ADD_TYPE_PAGE = "page";

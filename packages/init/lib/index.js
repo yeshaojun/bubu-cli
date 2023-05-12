@@ -1,4 +1,4 @@
-import Command from "@bubu/command";
+import Command from "@bubu-cli/command";
 import createTemplate from "./createTemplate.js";
 import downloadTemplate from "./downloadTemplate.js";
 import installTemplate from "./installTemplate.js";
