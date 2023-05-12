@@ -1,6 +1,6 @@
 {
   "name": "@bubu-cli/command",
-  "version": "0.1.1",
+  "version": "0.0.1",
   "description": "> TODO: description",
   "author": "yeshaojun <yeshaojun5056@163.com>",
   "homepage": "",
@@ -20,5 +20,9 @@
   "dependencies": {
     "execa": "^7.1.1"
   },
-  "gitHead": "a368d2d524908b6f412fd11ad8f8d2ffb6babfc7"
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "gitHead": "c57ad6ec62adb3edb7d8b4401e817cdf22b3b32f"
 }
