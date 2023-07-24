@@ -2,7 +2,7 @@ import { resolve } from "path";
 import { log, makeList, makeInput, getLatestVersion } from "@bubu-cli/utils";
 import { homedir } from "node:os";
 const ADD_TYPE_PROJECT = "project";
-const ADD_TYPE_PAGE = "page";
+const ADD_TYPE_NODE = "node";
 
 const ADD_TEMPLATE = [
   {
@@ -21,12 +21,12 @@ const ADD_TEMPLATE = [
 
 const ADD_TYPE = [
   {
-    name: "项目",
+    name: "前端项目",
     value: ADD_TYPE_PROJECT,
   },
   {
-    name: "页面",
-    value: ADD_TYPE_PAGE,
+    name: "Node项目",
+    value: ADD_TYPE_NODE,
   },
 ];
 

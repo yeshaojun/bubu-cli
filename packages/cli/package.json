@@ -21,6 +21,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@bubu-cli/commit": "^0.1.1",
     "@bubu-cli/init": "^0.0.1",
     "@bubu-cli/utils": "^0.0.1",
     "chalk": "^5.2.0",

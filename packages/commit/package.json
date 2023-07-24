@@ -1,0 +1,30 @@
+{
+  "name": "@bubu-cli/commit",
+  "version": "0.1.1",
+  "description": "> TODO: description",
+  "author": "yeshaojun <sjye@rsvptech.cn>",
+  "homepage": "https://github.com/yeshaojun/bubu-cli#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "type": "module",
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeshaojun/bubu-cli.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/commit.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/yeshaojun/bubu-cli/issues"
+  },
+  "dependencies": {
+    "@bubu-cli/command": "^0.0.1"
+  }
+}
