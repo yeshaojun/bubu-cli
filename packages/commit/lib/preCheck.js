@@ -30,7 +30,7 @@ export default async function preCheck() {
         if (isRepo) {
           const status = await checkGitStatus();
           if (!status) {
-            console.log(chalk.blue("你的代码很干净，不需要提交"));
+            console.log(chalk.blue("你的代码很干净，不需要提交!!!"));
             resolve(false);
           }
           resolve(true);

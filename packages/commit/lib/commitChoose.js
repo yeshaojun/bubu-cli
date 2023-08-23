@@ -22,6 +22,7 @@ function commit(answer, change) {
     console.log("");
   } catch (error) {
     log.error("提交失败，请手动提交！", error.message);
+    throw new Error(error);
   }
 }
 
@@ -36,9 +37,7 @@ async function isNeedPush() {
 
 async function checkPull() {
   try {
-    const spinner = ora("正在检查远程仓库是否有新的提交").start();
-    const pullResult = await git.pull(); // 拉取远程更改
-    spinner.stop();
+    const pullResult = await git.pull(null, null, { "--rebase": "false" }); // 拉取远程更改
     if (pullResult.failed) {
       log.error("合并失败");
     }
@@ -48,8 +47,8 @@ async function checkPull() {
       log.info("git pull no file change");
     }
   } catch (error) {
-    spinner.stop();
     log.error(error.message);
+    throw new Error(error);
   }
 }
 
@@ -112,20 +111,21 @@ export default async function commitChoose() {
         }
       },
     });
-    await commit(answer, change);
-    // 要做pull
-    await checkPull();
-
-    const status = await checkGitStatus();
-    if (status) {
-      log.info("您的本地代码与仓库代码有冲突，请解决后重试！");
-      return;
-    }
-    const needPush = await isNeedPush();
-    if (!needPush) {
-      return;
-    }
     try {
+      await commit(answer, change);
+      // 要做pull
+      await checkPull();
+
+      const status = await checkGitStatus();
+      if (status) {
+        log.info("您的本地代码与仓库代码有冲突，请解决后重试！");
+        return;
+      }
+      const needPush = await isNeedPush();
+      if (!needPush) {
+        return;
+      }
+
       const remotes = await git.getRemotes(true); // 获取远程信息
       const hasRemote = remotes.length > 0;
       if (!hasRemote) {
@@ -189,7 +189,7 @@ export default async function commitChoose() {
         });
       }
     } catch (error) {
-      console.log("err", error);
+      log.error(error.message);
     }
   }
 }

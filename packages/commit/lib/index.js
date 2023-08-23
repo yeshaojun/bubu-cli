@@ -20,6 +20,7 @@ class InitCommand extends Command {
   async action([name, option]) {
     const needCommit = await preCheck();
     if (needCommit) {
+      console.log("使用工具前，请先确保有操作文件的权限，否则脚本可能会无效");
       await commitChoose();
     }
   }
