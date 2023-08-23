@@ -40,12 +40,10 @@ export default async function preCheck() {
           log.error("您未配置用户身份！");
           console.log("请执行");
           console.log(
-            chalk.green.bold(
-              ` git config --global user.emial "you@example.com"`
-            )
+            chalk.cyan.bold(` git config --global user.emial "you@example.com"`)
           );
           console.log(
-            chalk.green.bold(` git config --global user.name "your name`)
+            chalk.cyan.bold(` git config --global user.name "your name`)
           );
           console.log("");
           resolve(false);
