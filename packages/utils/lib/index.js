@@ -1,6 +1,6 @@
 import log from "./log.js";
 import isDebug from "./isDebug.js";
-import { makeList, makeInput } from "./inquirer.js";
+import { makeList, makeInput, makeConfirm, makeCheckBox } from "./inquirer.js";
 import { getLatestVersion } from "./npm.js";
 
 export function printErrorLog(e, type) {
@@ -11,4 +11,12 @@ export function printErrorLog(e, type) {
   }
 }
 
-export { log, isDebug, makeList, makeInput, getLatestVersion };
+export {
+  log,
+  isDebug,
+  makeList,
+  makeInput,
+  getLatestVersion,
+  makeConfirm,
+  makeCheckBox,
+};

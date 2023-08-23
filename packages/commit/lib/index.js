@@ -1,12 +1,15 @@
 import Command from "@bubu-cli/command";
-
-class CommitCommand extends Command {
+import preCheck from "./preCheck.js";
+import commitChoose from "./commitChoose.js";
+class InitCommand extends Command {
   get command() {
     return "commit";
   }
+
   get description() {
-    return "git commit";
+    return "commit";
   }
+
   get options() {
     return [
       ["--f,--force", "是否强制更新", false],
@@ -15,12 +18,15 @@ class CommitCommand extends Command {
   }
 
   async action([name, option]) {
-    console.log("commit");
+    const needCommit = await preCheck();
+    if (needCommit) {
+      await commitChoose();
+    }
   }
 }
 
-function Commit(instance) {
-  return new CommitCommand(instance);
+function Init(instance) {
+  return new InitCommand(instance);
 }
 
-export default Commit;
+export default Init;

@@ -39,3 +39,17 @@ export function makeInput(params) {
     ...params,
   });
 }
+
+export function makeConfirm(params) {
+  return make({
+    type: "confirm",
+    ...params,
+  });
+}
+
+export function makeCheckBox(params) {
+  return make({
+    type: "checkbox",
+    ...params,
+  });
+}

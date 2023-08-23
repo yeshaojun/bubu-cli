@@ -9,6 +9,7 @@ function getCacheDir(targetPath) {
   return path.resolve(targetPath, "node_modules");
 }
 
+// 在主目录的node_modules下创建目录
 function makeCecheDir(targetPath) {
   const cacheDir = getCacheDir(targetPath);
   if (!pathExistsSync(cacheDir)) {
@@ -16,6 +17,7 @@ function makeCecheDir(targetPath) {
   }
 }
 
+// 下载模板
 async function downloadAddTemplate(targetPath, selectTemplate) {
   const { npmName, version } = selectTemplate;
   const installCommand = "npm";

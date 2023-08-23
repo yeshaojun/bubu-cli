@@ -5,14 +5,13 @@
   "author": "yeshaojun <yeshaojun5056@163.com>",
   "homepage": "",
   "license": "MIT",
-  "main": "dist/es/index.js",
-  "module": "dist/es/index.js",
+  "main": "lib/index.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "dist"
+    "lib"
   ],
   "scripts": {
     "build": "rollup -c"

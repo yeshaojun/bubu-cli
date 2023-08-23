@@ -1,10 +1,100 @@
-15 error Error: Command failed with exit code 1: git remote update
-15 error fatal: 无法访问 'https://github.com/yeshaojun/bubu-cli.git/'：HTTP/2 stream 1 was not closed cleanly before end of the underlying stream
-15 error error: 不能获取 origin
-15 error 正在获取 origin
-15 error     at makeError (/Users/sjye/code/bubu-cli/node_modules/execa/lib/error.js:60:11)
-15 error     at Function.module.exports.sync (/Users/sjye/code/bubu-cli/node_modules/execa/index.js:194:17)
-15 error     at Object.execSync (/Users/sjye/code/bubu-cli/node_modules/@lerna/child-process/index.js:39:16)
-15 error     at updateRemote (/Users/sjye/code/bubu-cli/node_modules/@lerna/version/lib/is-behind-upstream.js:34:16)
-15 error     at isBehindUpstream (/Users/sjye/code/bubu-cli/node_modules/@lerna/version/lib/is-behind-upstream.js:16:3)
-15 error     at VersionCommand.initialize (/Users/sjye/code/bubu-cli/node_modules/@lerna/version/index.js:156:9)
+0 silly argv { _: [ 'bootstrap' ], lernaVersion: '5.5.4', '$0': 'lerna' }
+1 notice cli v5.5.4
+2 verbose rootPath /Users/sjye/code/bubu-cli
+3 silly npmConfig {
+3 silly npmConfig   registry: undefined,
+3 silly npmConfig   npmClient: 'npm',
+3 silly npmConfig   npmClientArgs: [],
+3 silly npmConfig   mutex: undefined
+3 silly npmConfig }
+4 info Bootstrapping 5 packages
+5 verbose lifecycle preinstall
+6 silly lifecycle No script for "preinstall" in "@bubu-cli/command", continuing
+7 silly lifecycle No script for "preinstall" in "@bubu-cli/utils", continuing
+8 silly lifecycle No script for "preinstall" in "@bubu-cli/commit", continuing
+9 silly lifecycle No script for "preinstall" in "@bubu-cli/init", continuing
+10 silly lifecycle No script for "preinstall" in "@bubu-cli/cli", continuing
+11 silly hasDependencyInstalled @bubu-cli/cli @babel/core
+12 silly hasDependencyInstalled @bubu-cli/cli @babel/preset-env
+13 silly hasDependencyInstalled @bubu-cli/cli execa
+14 silly hasDependencyInstalled @bubu-cli/command execa
+15 silly hasDependencyInstalled @bubu-cli/commit execa
+16 silly hasDependencyInstalled @bubu-cli/init execa
+17 silly hasDependencyInstalled @bubu-cli/utils execa
+18 silly hasDependencyInstalled @bubu-cli/cli jest
+19 silly hasDependencyInstalled @bubu-cli/cli @bubu-cli/utils
+20 silly hasDependencyInstalled @bubu-cli/cli chalk
+21 silly hasDependencyInstalled @bubu-cli/commit chalk
+22 silly hasDependencyInstalled @bubu-cli/cli commander
+23 silly hasDependencyInstalled @bubu-cli/cli dirname-filename-esm
+24 silly hasDependencyInstalled @bubu-cli/cli fs-extra
+25 silly hasDependencyInstalled @bubu-cli/init fs-extra
+26 silly hasDependencyInstalled @bubu-cli/cli import-local
+27 silly hasDependencyInstalled @bubu-cli/cli npmlog
+28 silly hasDependencyInstalled @bubu-cli/utils npmlog
+29 silly hasDependencyInstalled @bubu-cli/cli semver
+30 silly hasDependencyInstalled @bubu-cli/commit simple-git
+31 silly hasDependencyInstalled @bubu-cli/init ejs
+32 silly hasDependencyInstalled @bubu-cli/init glob
+33 silly hasDependencyInstalled @bubu-cli/init ora
+34 silly hasDependencyInstalled @bubu-cli/init path-exists
+35 silly hasDependencyInstalled @bubu-cli/utils axios
+36 silly hasDependencyInstalled @bubu-cli/utils inquirer
+37 silly hasDependencyInstalled @bubu-cli/utils url-join
+38 silly root dependencies {}
+39 silly leaf dependencies {}
+40 info Installing external dependencies
+41 verbose actions 1 actions, concurrency 12
+42 silly npmInstallDependencies @bubu-cli/commit [ 'execa@^7.1.1', 'chalk@^5.2.0', 'simple-git@^3.19.1' ]
+43 silly npmInstallDependencies backup /Users/sjye/code/bubu-cli/packages/commit/package.json
+44 silly npmInstallDependencies writing tempJson {
+44 silly npmInstallDependencies   name: '@bubu-cli/commit',
+44 silly npmInstallDependencies   version: '0.1.1',
+44 silly npmInstallDependencies   description: '> TODO: description',
+44 silly npmInstallDependencies   author: 'yeshaojun <sjye@rsvptech.cn>',
+44 silly npmInstallDependencies   homepage: 'https://github.com/yeshaojun/bubu-cli#readme',
+44 silly npmInstallDependencies   license: 'ISC',
+44 silly npmInstallDependencies   main: 'lib/index.js',
+44 silly npmInstallDependencies   directories: { lib: 'lib', test: '__tests__' },
+44 silly npmInstallDependencies   files: [ 'lib' ],
+44 silly npmInstallDependencies   type: 'module',
+44 silly npmInstallDependencies   repository: { type: 'git', url: 'git+https://github.com/yeshaojun/bubu-cli.git' },
+44 silly npmInstallDependencies   bugs: { url: 'https://github.com/yeshaojun/bubu-cli/issues' },
+44 silly npmInstallDependencies   dependencies: { chalk: '^5.2.0', execa: '^7.1.1', 'simple-git': '^3.19.1' }
+44 silly npmInstallDependencies }
+45 silly getNpmExecOpts /Users/sjye/code/bubu-cli/packages/commit undefined
+46 silly npmInstall [ 'npm', [ 'install' ] ]
+47 silly npmInstallDependencies cleanup /Users/sjye/code/bubu-cli/packages/commit/package.json
+48 verbose installed leaf @bubu-cli/commit
+49 info Symlinking packages and binaries
+50 silly resolveSymlink /Users/sjye/code/bubu-cli/packages/cli/node_modules/@bubu-cli/init
+51 verbose resolveSymlink [
+51 verbose resolveSymlink   '/Users/sjye/code/bubu-cli/packages/cli/node_modules/@bubu-cli/init',
+51 verbose resolveSymlink   '/Users/sjye/code/bubu-cli/packages/init'
+51 verbose resolveSymlink ]
+52 silly createSymlink [
+52 silly createSymlink   '/Users/sjye/code/bubu-cli/packages/init',
+52 silly createSymlink   '/Users/sjye/code/bubu-cli/packages/cli/node_modules/@bubu-cli/init',
+52 silly createSymlink   'junction'
+52 silly createSymlink ]
+53 silly createSymbolicLink [
+53 silly createSymbolicLink   '../../../init',
+53 silly createSymbolicLink   '/Users/sjye/code/bubu-cli/packages/cli/node_modules/@bubu-cli/init',
+53 silly createSymbolicLink   'junction'
+53 silly createSymbolicLink ]
+54 silly resolveSymlink /Users/sjye/code/bubu-cli/packages/cli/node_modules/@bubu-cli/commit
+55 verbose resolveSymlink [
+55 verbose resolveSymlink   '/Users/sjye/code/bubu-cli/packages/cli/node_modules/@bubu-cli/commit',
+55 verbose resolveSymlink   '/Users/sjye/code/bubu-cli/packages/commit'
+55 verbose resolveSymlink ]
+56 silly createSymlink [
+56 silly createSymlink   '/Users/sjye/code/bubu-cli/packages/commit',
+56 silly createSymlink   '/Users/sjye/code/bubu-cli/packages/cli/node_modules/@bubu-cli/commit',
+56 silly createSymlink   'junction'
+56 silly createSymlink ]
+57 silly createSymbolicLink [
+57 silly createSymbolicLink   '../../../commit',
+57 silly createSymbolicLink   '/Users/sjye/code/bubu-cli/packages/cli/node_modules/@bubu-cli/commit',
+57 silly createSymbolicLink   'junction'
+57 silly createSymbolicLink ]
+58 error

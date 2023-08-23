@@ -1,6 +1,6 @@
 import fse from "fs-extra";
 import path from "node:path";
-import { log, makeList, makeInput } from "@bubu-cli/utils";
+import { log, makeList, makeInput, makeConfirm } from "@bubu-cli/utils";
 import { pathExistsSync } from "path-exists";
 import ora from "ora";
 import { glob } from "glob";
@@ -19,35 +19,66 @@ function getPluginFilePath(targetPath, template) {
   );
 }
 
-function copyFile(targetPath, template, installDir) {
+// 将下载的模板来拷贝到目录
+function copyFile(targetPath, template, installDir, result) {
   const originFile = getCacheFilePath(targetPath, template);
-  const fileList = fse.readdirSync(originFile);
+  // const fileList = fse.readdirSync(originFile);
+  const folderToExclude = [];
+  if (result && !result.isRouter) {
+    folderToExclude.push("router");
+  }
+  if (result && !result.isPina) {
+    folderToExclude.push("stores");
+  }
+
+  if (result && !result.isTailWindCss) {
+    folderToExclude.push("tailwind.config.js", "postcss.config.js");
+  }
+
   const spinner = ora("正在拷贝模板文件").start();
-  fileList.forEach((file) => {
-    fse.copySync(`${originFile}/${file}`, `${installDir}/${file}`);
-  });
+  copyFileExclude(originFile, installDir, folderToExclude);
   spinner.stop();
   log.info("模板拷贝成功！");
 }
 
-async function ejsRender(installDir, template, name) {
+function copyFileExclude(source, destination, folderToExclude = []) {
+  const files = fse.readdirSync(source);
+  files.forEach((file) => {
+    const sourcePath = path.join(source, file);
+    const destinationPath = path.join(destination, file);
+    const stat = fse.statSync(sourcePath);
+    if (stat.isFile()) {
+      fse.copySync(sourcePath, destinationPath);
+    } else if (stat.isDirectory() && folderToExclude.indexOf(file) === -1) {
+      fse.ensureDirSync(destinationPath);
+      copyFileExclude(sourcePath, destinationPath, folderToExclude);
+    }
+  });
+}
+
+// ejs编译
+async function ejsRender(targetPath, installDir, template, name, result) {
   const files = await glob("**", {
     cwd: installDir,
     nodir: true,
     ignore: ["**/publish/**", "**/node_modules/**"],
   });
 
-  let data = {};
-  // 执行插件
+  let data = {
+    ...result,
+  };
+
+  // 执行插件（插件并不需要拷贝过来）
   const pluginPath = getPluginFilePath(targetPath, template);
   if (pathExistsSync(pluginPath)) {
     const pluginFn = await import(pluginPath).default;
     data = pluginFn({
       makeList,
       makeInput,
+      makeConfirm,
     });
   }
-  console.log("files", files);
+
   files.map((file) => {
     const filePath = path.join(installDir, file);
     ejs.renderFile(
@@ -69,9 +100,8 @@ async function ejsRender(installDir, template, name) {
   });
 }
 
-export default function installTemplate(selectTemplate, opts) {
+export default function installTemplate(selectTemplate, opts, result) {
   const { force = false } = opts;
-  console.log("force", force);
   const { targetPath, name, template } = selectTemplate;
   const rootDir = process.cwd();
   fse.ensureDirSync(targetPath);
@@ -86,6 +116,6 @@ export default function installTemplate(selectTemplate, opts) {
   } else {
     fse.ensureDirSync(installDir);
   }
-  copyFile(targetPath, template, installDir);
-  ejsRender(installDir, template, name);
+  copyFile(targetPath, template, installDir, result);
+  ejsRender(targetPath, installDir, template, name, result);
 }

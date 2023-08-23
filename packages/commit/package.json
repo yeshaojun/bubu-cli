@@ -10,10 +10,10 @@
     "lib": "lib",
     "test": "__tests__"
   },
-  "type": "module",
   "files": [
     "lib"
   ],
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yeshaojun/bubu-cli.git"
@@ -25,6 +25,11 @@
     "url": "https://github.com/yeshaojun/bubu-cli/issues"
   },
   "dependencies": {
-    "@bubu-cli/command": "^0.0.1"
+    "@bubu-cli/command": "^0.0.1",
+    "@bubu-cli/utils": "^0.0.2",
+    "chalk": "^5.2.0",
+    "execa": "^7.1.1",
+    "ora": "^7.0.1",
+    "simple-git": "^3.19.1"
   }
 }
