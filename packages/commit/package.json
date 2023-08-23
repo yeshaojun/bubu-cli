@@ -31,5 +31,10 @@
     "execa": "^7.1.1",
     "ora": "^7.0.1",
     "simple-git": "^3.19.1"
-  }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "gitHead": "3a9e126cf78a29406c54e9876b0a1ac488ac2b71"
 }
