@@ -1,6 +1,6 @@
 {
   "name": "@bubu-cli/commit",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "> TODO: description",
   "author": "yeshaojun <sjye@rsvptech.cn>",
   "homepage": "https://github.com/yeshaojun/bubu-cli#readme",
@@ -25,8 +25,8 @@
     "url": "https://github.com/yeshaojun/bubu-cli/issues"
   },
   "dependencies": {
-    "@bubu-cli/command": "^0.0.1",
-    "@bubu-cli/utils": "^0.0.2",
+    "@bubu-cli/command": "^0.1.2",
+    "@bubu-cli/utils": "^0.1.2",
     "chalk": "^5.2.0",
     "execa": "^7.1.1",
     "ora": "^7.0.1",
