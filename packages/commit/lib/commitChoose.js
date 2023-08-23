@@ -11,10 +11,10 @@ import { checkGitStatus } from "./preCheck.js";
 import ora from "ora";
 const git = simpleGit(process.cwd());
 
-function commit(answer, change) {
+async function commit(answer, change) {
   try {
-    git.add(".");
-    git.commit(`${answer}: ${change.subject}`);
+    await git.add(".");
+    await git.commit(`${answer}: ${change.subject}`);
     console.log("");
     console.log(chalk.green.bold("----------------------------------"));
     console.log(chalk.green.bold(" 本地commit成功！  "));
