@@ -1,6 +1,7 @@
 import { simpleGit } from "simple-git";
 import { log, makeList } from "@bubu-cli/utils";
 import chalk from "chalk";
+const git = simpleGit(process.cwd());
 
 export async function checkGitStatus() {
   const git = simpleGit(process.cwd());
@@ -18,8 +19,15 @@ export async function checkGitStatus() {
   }
 }
 
+async function checkIdentity() {
+  const config = await git.listConfig();
+  // 判断是否存在用户和邮箱配置
+  const hasUserConfig = config["user.name"] !== undefined;
+  const hasEmailConfig = config["user.email"] !== undefined;
+  return hasUserConfig && hasUserConfig;
+}
+
 export default async function preCheck() {
-  const git = simpleGit(process.cwd());
   try {
     return new Promise((resolve, reject) => {
       git.checkIsRepo(async (error, isRepo) => {
@@ -27,13 +35,34 @@ export default async function preCheck() {
           log.error("您暂未初始化仓库，请先初始化！");
           resolve(false);
         }
+
+        if (!checkIdentity()) {
+          log.error("您未配置用户身份！");
+          console.log("请执行");
+          console.log(
+            chalk.green.bold(
+              ` git config --global user.emial "you@example.com"`
+            )
+          );
+          console.log(
+            chalk.green.bold(` git config --global user.name "your name`)
+          );
+          console.log("");
+          resolve(false);
+        }
+
         if (isRepo) {
-          const status = await checkGitStatus();
-          if (!status) {
-            console.log(chalk.blue("你的代码很干净，不需要提交!!!"));
-            resolve(false);
+          try {
+            const status = await checkGitStatus();
+            if (!status) {
+              console.log(chalk.blue("你的代码很干净，不需要提交!!!"));
+              resolve(false);
+            }
+            resolve(true);
+          } catch (error) {
+            log.error("git status error:" + error.message);
+            throw new Error(error);
           }
-          resolve(true);
         }
       });
     });
