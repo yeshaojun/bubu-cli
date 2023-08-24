@@ -113,21 +113,12 @@ export default async function commitChoose() {
     });
     try {
       await commit(answer, change);
-      // 要做pull
-      await checkPull();
 
-      const status = await checkGitStatus();
-      if (status) {
-        log.info("您的本地代码与仓库代码有冲突，请解决后重试！");
-        return;
-      }
-      const needPush = await isNeedPush();
-      if (!needPush) {
-        return;
-      }
-
-      const remotes = await git.getRemotes(true); // 获取远程信息
+      let remotes = await git.getRemotes(true); // 获取远程信息
       const hasRemote = remotes.length > 0;
+      const branchSummary = await git.branchLocal(); // 获取本地分支信息
+      const currentBranch = branchSummary.current; //
+
       if (!hasRemote) {
         const url = await makeInput({
           message: "您还未关联远程仓库，请输入仓库地址？(仓库名默认origin):",
@@ -140,54 +131,60 @@ export default async function commitChoose() {
             }
           },
         });
-        const branch =
-          (await makeInput({
-            message: "请输入关联分支(默认master)",
-            name: "branch",
-            default: "master",
-          })) || "master";
         try {
+          await git.raw(["remote", "add", "origin", url]);
           const result = await git.branch([
             "--set-upstream-to",
-            `origin/${branch}`,
-            branch,
+            `origin/${currentBranch}`,
+            currentBranch,
           ]);
-          await git.raw(["push", "origin", `${branch}:${branch}`]);
+          remotes = [
+            {
+              name: "origin",
+            },
+          ];
+          // await git.raw(["push", "origin", `${branch}:${branch}`]);
         } catch (error) {
-          log.error("远程绑定失败，请手动绑定！");
+          log.error("远程绑定失败，请手动绑定！", error.message);
         }
-      } else {
-        let chooseRemote = [];
-        if (remotes.length > 1) {
-          chooseRemote = await makeCheckBox({
-            message: "选择提交的仓库(可多选)",
-            name: "remote",
-            choices: remotes.map((_) => _.name),
-          });
-        } else {
-          chooseRemote = remotes.map((_) => _.name);
-        }
-        const branchSummary = await git.branchLocal(); // 获取本地分支信息
-        const currentBranch = branchSummary.current; //
-        remotes.forEach(async (_) => {
-          if (chooseRemote.indexOf(_.name) !== -1) {
-            await git.raw([
-              "push",
-              _.name,
-              `${currentBranch}:${currentBranch}`,
-            ]);
-            console.log("");
-            console.log(chalk.green.bold("----------------------------------"));
-            console.log(
-              chalk.green.bold(
-                ` 推送${currentBranch}分支到远程${_.name}仓库成功！  `
-              )
-            );
-            console.log(chalk.green.bold("----------------------------------"));
-            console.log("");
-          }
-        });
       }
+      // 要做pull
+      await checkPull();
+
+      const status = await checkGitStatus();
+      if (status) {
+        log.info("您的本地代码与仓库代码有冲突，请解决后重试！");
+        return;
+      }
+      const needPush = await isNeedPush();
+      if (!needPush) {
+        return;
+      }
+      let chooseRemote = [];
+      if (remotes.length > 1) {
+        chooseRemote = await makeCheckBox({
+          message: "选择提交的仓库(可多选)",
+          name: "remote",
+          choices: remotes.map((_) => _.name),
+        });
+      } else {
+        chooseRemote = remotes.map((_) => _.name);
+      }
+
+      remotes.forEach(async (_) => {
+        if (chooseRemote.indexOf(_.name) !== -1) {
+          await git.raw(["push", _.name, `${currentBranch}:${currentBranch}`]);
+          console.log("");
+          console.log(chalk.green.bold("----------------------------------"));
+          console.log(
+            chalk.green.bold(
+              ` 推送${currentBranch}分支到远程${_.name}仓库成功！  `
+            )
+          );
+          console.log(chalk.green.bold("----------------------------------"));
+          console.log("");
+        }
+      });
     } catch (error) {
       log.error(error.message);
     }
