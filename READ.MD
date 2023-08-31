@@ -1,9 +1,9 @@
-# 入口
+# 项目脚手架
 
-packages/cli/bin
-判断是否有 npm 版本，优先使用本地版本
-packages/lib/index 1.使用 commander 创建命令，全局钩子并返回 program 2.创建 init 命令 3.创建 commit 命令
+### bubu init
 
-# init
+可自定义选择 react, vue, node 等项目，内置了一套标准的模板代码，并且可自定义选择安装 ui 框架等，无需手动设置
 
-1.注册命令
+### bubu commit
+
+可按 commitlint 规范自动提交代码，并且提供了自动 pull， 以及 push， remote 等操作

@@ -14,7 +14,7 @@ const git = simpleGit(process.cwd());
 async function commit(answer, change) {
   try {
     await git.add(".");
-    await git.commit(`${answer}: ${change.subject}`);
+    await git.commit(`${answer}: ${change}`);
     console.log("");
     console.log(chalk.green.bold("----------------------------------"));
     console.log(chalk.green.bold(" 本地commit成功！  "));
@@ -113,7 +113,6 @@ export default async function commitChoose() {
     });
     try {
       await commit(answer, change);
-
       let remotes = await git.getRemotes(true); // 获取远程信息
       const hasRemote = remotes.length > 0;
       const branchSummary = await git.branchLocal(); // 获取本地分支信息
