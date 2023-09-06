@@ -165,6 +165,7 @@ export default async function commitChoose() {
           message: "选择提交的仓库(可多选)",
           name: "remote",
           choices: remotes.map((_) => _.name),
+          default: remotes.map((_) => _.name),
         });
       } else {
         chooseRemote = remotes.map((_) => _.name);
