@@ -895,10 +895,50 @@
     tmp "~0.2.1"
     tslib "^2.3.0"
 
+"@nrwl/nx-darwin-arm64@15.9.6":
+  version "15.9.6"
+  resolved "https://registry.npmjs.org/@nrwl/nx-darwin-arm64/-/nx-darwin-arm64-15.9.6.tgz"
+  integrity sha512-9J2HLA6ePfVIoyymIQmwBm2cHvh0hdWuSVldHq3GSpL1tbWEUVwrLxRwcG1ryO2HCNPPb2Z9h8jrSd6BVgEMsA==
+
 "@nrwl/nx-darwin-x64@15.9.6":
   version "15.9.6"
   resolved "https://registry.npmjs.org/@nrwl/nx-darwin-x64/-/nx-darwin-x64-15.9.6.tgz"
   integrity sha512-QUbQYUxStLEDHndYFRxSH+Ir1ciezViy+kS9vfwsNLpBAfEE5kkoKk6Owv74gLQncTFB5/4vwkb7VT+LtVP/2w==
+
+"@nrwl/nx-linux-arm-gnueabihf@15.9.6":
+  version "15.9.6"
+  resolved "https://registry.npmjs.org/@nrwl/nx-linux-arm-gnueabihf/-/nx-linux-arm-gnueabihf-15.9.6.tgz"
+  integrity sha512-IjwE1Q6wi4iww67uU5i8XIg9LXhwhOIVuDMQ28pB03kahwL87s0z/MvQ7yXISgskamkFEUzffI/Zei+OHYST3g==
+
+"@nrwl/nx-linux-arm64-gnu@15.9.6":
+  version "15.9.6"
+  resolved "https://registry.npmjs.org/@nrwl/nx-linux-arm64-gnu/-/nx-linux-arm64-gnu-15.9.6.tgz"
+  integrity sha512-iqgUZMtD8UZx5IeOzGREcP+vQ98czdBh3NmevqVJPGSfFtV7QixsUnRPk5v15bbfSg97Z+/6c7KRb9HsUAl13Q==
+
+"@nrwl/nx-linux-arm64-musl@15.9.6":
+  version "15.9.6"
+  resolved "https://registry.npmjs.org/@nrwl/nx-linux-arm64-musl/-/nx-linux-arm64-musl-15.9.6.tgz"
+  integrity sha512-9UA2X2n998brY5YBLqgVmL1Jf5qrlFXToDADhUrsN5kqhgd3TqPhdgSBXhzUfUeMVtq6Bm4mhVHzM3bK49jxZA==
+
+"@nrwl/nx-linux-x64-gnu@15.9.6":
+  version "15.9.6"
+  resolved "https://registry.npmjs.org/@nrwl/nx-linux-x64-gnu/-/nx-linux-x64-gnu-15.9.6.tgz"
+  integrity sha512-9Oe0BZJuf4lmeL3KV8woLL+NIauBFbMHmSgxhUKUWwNVC/VDJhDSkkUCTlM1R6lTj3KYrJzpZ9ymSuZM4ftd5g==
+
+"@nrwl/nx-linux-x64-musl@15.9.6":
+  version "15.9.6"
+  resolved "https://registry.npmjs.org/@nrwl/nx-linux-x64-musl/-/nx-linux-x64-musl-15.9.6.tgz"
+  integrity sha512-GNJDsmF0W7WOEnSbB9b/bOyS+Jl0S/zJEoGG0J9mpWTQCVx2HYvxl5EesTxO1Q/H2XmaraRNDS3xpk4l9ofo4w==
+
+"@nrwl/nx-win32-arm64-msvc@15.9.6":
+  version "15.9.6"
+  resolved "https://registry.npmjs.org/@nrwl/nx-win32-arm64-msvc/-/nx-win32-arm64-msvc-15.9.6.tgz"
+  integrity sha512-kFl9naZtZcSbZEXcjCJJlxWZPcZdp5AW+FGKnRKcAU3rdcsghtnf9ErMhIWJEaIxjMURV6C0ddw9YZNSVCumGA==
+
+"@nrwl/nx-win32-x64-msvc@15.9.6":
+  version "15.9.6"
+  resolved "https://registry.npmjs.org/@nrwl/nx-win32-x64-msvc/-/nx-win32-x64-msvc-15.9.6.tgz"
+  integrity sha512-omUJK6ZC6Ht5dPNxo+78hUAUhVVPsvjWhGoG1Et70rDhhNdY4c9BWU9vqmutWeDlr+ZlYNadtD/HPOikGVHfAw==
 
 "@nrwl/tao@15.9.6":
   version "15.9.6"

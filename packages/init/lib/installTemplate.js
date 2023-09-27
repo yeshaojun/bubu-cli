@@ -47,7 +47,7 @@ function copyFileExclude(source, destination, folderToExclude = []) {
     const sourcePath = path.join(source, file);
     const destinationPath = path.join(destination, file);
     const stat = fse.statSync(sourcePath);
-    if (stat.isFile()) {
+    if (stat.isFile() && folderToExclude.indexOf(file) === -1) {
       fse.copySync(sourcePath, destinationPath);
     } else if (stat.isDirectory() && folderToExclude.indexOf(file) === -1) {
       fse.ensureDirSync(destinationPath);

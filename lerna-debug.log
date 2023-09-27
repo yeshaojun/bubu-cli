@@ -1,35 +1,4 @@
-0 silly argv { _: [ 'link' ], lernaVersion: '5.6.2', '$0': 'lerna' }
-1 notice cli v5.6.2
-2 verbose rootPath /Users/sjye/code/bubu-cli
-3 info Symlinking packages and binaries
-4 silly resolveSymlink /Users/sjye/code/bubu-cli/packages/cli/node_modules/@bubu-cli/commit
-5 verbose resolveSymlink [
-5 verbose resolveSymlink   '/Users/sjye/code/bubu-cli/packages/cli/node_modules/@bubu-cli/commit',
-5 verbose resolveSymlink   '/Users/sjye/code/bubu-cli/packages/commit'
-5 verbose resolveSymlink ]
-6 silly createSymlink [
-6 silly createSymlink   '/Users/sjye/code/bubu-cli/packages/commit',
-6 silly createSymlink   '/Users/sjye/code/bubu-cli/packages/cli/node_modules/@bubu-cli/commit',
-6 silly createSymlink   'junction'
-6 silly createSymlink ]
-7 silly createSymbolicLink [
-7 silly createSymbolicLink   '../../../commit',
-7 silly createSymbolicLink   '/Users/sjye/code/bubu-cli/packages/cli/node_modules/@bubu-cli/commit',
-7 silly createSymbolicLink   'junction'
-7 silly createSymbolicLink ]
-8 silly resolveSymlink /Users/sjye/code/bubu-cli/packages/cli/node_modules/@bubu-cli/init
-9 verbose resolveSymlink [
-9 verbose resolveSymlink   '/Users/sjye/code/bubu-cli/packages/cli/node_modules/@bubu-cli/init',
-9 verbose resolveSymlink   '/Users/sjye/code/bubu-cli/packages/init'
-9 verbose resolveSymlink ]
-10 silly createSymlink [
-10 silly createSymlink   '/Users/sjye/code/bubu-cli/packages/init',
-10 silly createSymlink   '/Users/sjye/code/bubu-cli/packages/cli/node_modules/@bubu-cli/init',
-10 silly createSymlink   'junction'
-10 silly createSymlink ]
-11 silly createSymbolicLink [
-11 silly createSymbolicLink   '../../../init',
-11 silly createSymbolicLink   '/Users/sjye/code/bubu-cli/packages/cli/node_modules/@bubu-cli/init',
-11 silly createSymbolicLink   'junction'
-11 silly createSymbolicLink ]
-12 error
+53 error Error: Command failed with exit code 128: git push --follow-tags --no-verify --atomic origin master
+53 error fatal: 无法访问 'https://github.com/yeshaojun/bubu-cli.git/'：Failed to connect to github.com port 443: Operation timed out
+53 error     at makeError (/Users/sjye/code/bubu-cli/node_modules/execa/lib/error.js:60:11)
+53 error     at handlePromise (/Users/sjye/code/bubu-cli/node_modules/execa/index.js:118:26)
