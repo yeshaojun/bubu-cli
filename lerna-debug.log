@@ -1,4 +1,14 @@
-53 error Error: Command failed with exit code 128: git push --follow-tags --no-verify --atomic origin master
-53 error fatal: 无法访问 'https://github.com/yeshaojun/bubu-cli.git/'：Failed to connect to github.com port 443: Operation timed out
-53 error     at makeError (/Users/sjye/code/bubu-cli/node_modules/execa/lib/error.js:60:11)
-53 error     at handlePromise (/Users/sjye/code/bubu-cli/node_modules/execa/index.js:118:26)
+0 silly argv {
+0 silly argv   _: [ 'add' ],
+0 silly argv   scope: '@bubu-cli/cli',
+0 silly argv   globs: [],
+0 silly argv   lernaVersion: '5.6.2',
+0 silly argv   '$0': 'lerna',
+0 silly argv   pkg: 'terminalLink'
+0 silly argv }
+1 notice cli v5.6.2
+2 verbose rootPath /Users/sjye/code/bubu-cli
+3 error HttpErrorGeneral: 404 Not Found - GET https://registry.npmjs.org/terminalLink - Not found
+3 error     at /Users/sjye/code/bubu-cli/node_modules/npm-registry-fetch/lib/check-response.js:95:15
+3 error     at processTicksAndRejections (node:internal/process/task_queues:96:5)
+3 error     at async RegistryFetcher.packument (/Users/sjye/code/bubu-cli/node_modules/pacote/lib/registry.js:92:19)

@@ -70,7 +70,10 @@ export default async function installLib(selectTemplate) {
         ui,
       };
     } else {
-      return {};
+      return {
+        isRouter: true,
+        isPinia: true,
+      };
     }
   } else {
     // node 选数据库
