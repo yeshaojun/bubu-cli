@@ -1,6 +1,6 @@
 {
   "name": "@bubu-cli/cli",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "@bubu/cli",
   "author": "yeshaojun <yeshaojun5056@163.com>",
   "homepage": "",
@@ -27,9 +27,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "@bubu-cli/commit": "^0.1.8",
-    "@bubu-cli/init": "^0.1.8",
-    "@bubu-cli/utils": "^0.1.8",
+    "@bubu-cli/commit": "^0.1.9",
+    "@bubu-cli/init": "^0.1.9",
+    "@bubu-cli/utils": "^0.1.9",
     "chalk": "^5.2.0",
     "commander": "^10.0.0",
     "dirname-filename-esm": "^1.1.1",
