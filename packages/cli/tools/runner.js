@@ -15,7 +15,6 @@ const DEBUG_SIGN = ["--d", "--debug"];
 // 通用的前置逻辑
 export async function runCli(fn, args) {
   const debug = args.filter((_) => DEBUG_SIGN.indexOf(_) !== -1).length;
-  console.log("args", args[0], debug);
   if (debug > 0) {
     DEBUG_SIGN.forEach((_) => remove(args, _));
   }
@@ -32,7 +31,6 @@ export async function runCli(fn, args) {
   ) {
     const agent = await detect({ cwd });
     const agentVersion = await getV(agent);
-    console.log("agentPromise", agent);
 
     // 输出脚手架版本号， node版本，npm版本，使用工具版本
     console.log(`@bubu/cli     ${chalk.green(pkg.version)}`);
@@ -79,7 +77,6 @@ export async function runCli(fn, args) {
 export async function getCliCommand(fn, args, cwd) {
   const isGlobal = args.includes("-g");
   if (isGlobal) {
-    // 一会回过头再看看
     return await fn(await getGlobalAgent(), args);
   }
 
