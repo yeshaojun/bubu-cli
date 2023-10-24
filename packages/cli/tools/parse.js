@@ -41,3 +41,35 @@ export const parseBi = (agent, args, ctx) => {
 
   return getCommand(agent, "add", args);
 };
+
+export const parseBr = (agent, args) => {
+  if (args.length === 0) args.push("start");
+
+  if (args.includes("--if-present")) {
+    args = exclude(args, "--if-present");
+    args[0] = `--if-present ${args[0]}`;
+  }
+
+  return getCommand(agent, "run", args);
+};
+
+export const parseBu = (agent, args) => {
+  if (args.includes("-i"))
+    return getCommand(agent, "upgrade-interactive", exclude(args, "-i"));
+
+  return getCommand(agent, "upgrade", args);
+};
+
+export const parseBun = (agent, args) => {
+  if (args.includes("-g"))
+    return getCommand(agent, "global_uninstall", exclude(args, "-g"));
+  return getCommand(agent, "uninstall", args);
+};
+
+export const parseBlx = (agent, args) => {
+  return getCommand(agent, "execute", args);
+};
+
+export const parseBa = (agent, args) => {
+  return getCommand(agent, "agent", args);
+};

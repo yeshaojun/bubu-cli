@@ -10,7 +10,10 @@
     "b": "bin/cli.js",
     "bi": "lib/bi.js",
     "bci": "lib/bci.js",
-    "br": "lib/br.js"
+    "br": "lib/br.js",
+    "bu": "lib/bu.js",
+    "blx": "lib/blx.js",
+    "ba": "lib/ba.js"
   },
   "directories": {
     "lib": "lib",
