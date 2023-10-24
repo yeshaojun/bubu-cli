@@ -155,7 +155,6 @@ export default async function commitChoose() {
         log.info("您的本地代码与仓库代码有冲突，请解决后重试！");
         return;
       }
-      // 是否需要加tag
       const needPush = await isNeedPush();
       if (!needPush) {
         return;
