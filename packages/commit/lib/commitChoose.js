@@ -35,15 +35,6 @@ async function isNeedPush() {
   return isPush;
 }
 
-async function isNeedtag() {
-  const isTag = await makeConfirm({
-    name: "tag",
-    message: "是否需要创建tag",
-    default: true,
-  });
-  return isTag;
-}
-
 async function checkPull() {
   try {
     const pullResult = await git.pull(null, null, { "--rebase": "false" }); // 拉取远程更改
@@ -165,8 +156,6 @@ export default async function commitChoose() {
         return;
       }
       // 是否需要加tag
-
-      const needTag = await isNeedtag();
       const needPush = await isNeedPush();
       if (!needPush) {
         return;
