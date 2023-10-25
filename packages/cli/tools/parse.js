@@ -22,12 +22,10 @@ export function getCommand(agent, command, args) {
 }
 
 export const parseBi = (agent, args, ctx) => {
-  // bun use `-d` instead of `-D`, #90
   if (agent === "bun") args = args.map((i) => (i === "-D" ? "-d" : i));
 
   if (args.includes("-g"))
     return getCommand(agent, "global", exclude(args, "-g"));
-  console.log("args", args, ctx);
   if (args.includes("--frozen-if-present")) {
     args = exclude(args, "--frozen-if-present");
     return getCommand(agent, ctx?.hasLock ? "frozen" : "install", args);

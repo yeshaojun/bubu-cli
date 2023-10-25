@@ -31,7 +31,7 @@ runCli(async (agent, args, ctx) => {
     const terminalColumns = process.stdout?.columns || 80;
     function limitText(text, maxWidth) {
       if (text.length <= maxWidth) return text;
-      return `${text.slice(0, maxWidth)}${c.dim("…")}`;
+      return `${text.slice(0, maxWidth)}`;
     }
     const choices = raw.map(({ key, description }) => ({
       title: key,
