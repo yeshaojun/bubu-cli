@@ -1,3 +1,8 @@
+# 安装
+yarn add @bubu-cli/cli
+
+npm install @bubu-cli/cli
+
 # 项目脚手架
 
 ### 命令一： b init
