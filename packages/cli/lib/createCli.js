@@ -11,7 +11,7 @@ const pkgPath = path.resolve(__dirname, "../package.json");
 const pkg = fse.readJSONSync(pkgPath);
 
 const name = Object.keys(pkg.bin)[0];
-const LOWEST_NODE_VERSION = "14.0.0";
+const LOWEST_NODE_VERSION = "18.0.0";
 
 function checkNodeVersion() {
   if (!semver.gte(process.version, LOWEST_NODE_VERSION)) {
