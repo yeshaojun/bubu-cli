@@ -58,10 +58,12 @@ export default async function installLib(selectTemplate) {
       const isRouter = await installVueRouter();
       // 是否安装pinia
       const isPinia = await installVuePinia();
+      console.log('isPinia', isPinia)
       // 是否安装tailwindcss
       const isTailWindCss = await installTailWindCss();
       // 选择ui库
       const ui = await installUiLib();
+      console.log('ui', ui)
       return {
         isRouter,
         isPinia,

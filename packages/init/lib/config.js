@@ -1,5 +1,6 @@
 export const ADD_TYPE_PROJECT = "project";
 export const ADD_TYPE_NODE = "node";
+export const ADD_NODE_FARMEWORK = "nest";
 export const ADD_TEMPLATE = [
   {
     name: "vue3项目模板",
@@ -8,7 +9,7 @@ export const ADD_TEMPLATE = [
     version: "latest",
   },
   {
-    name: "react18项目模板",
+    name: "react19项目模板",
     npmName: "@bubu-cli/react-template",
     value: "react-template",
     version: "latest",
@@ -20,10 +21,21 @@ export const ADD_TYPE = [
     value: ADD_TYPE_PROJECT,
   },
   {
-    name: "Node项目",
+    name: "Node后端项目",
     value: ADD_TYPE_NODE,
   },
 ];
+
+export const NODE_TYPE = [
+  {
+    name: 'nest框架',
+    value: 'nest'
+  },
+  {
+    name: "koa框架",
+    value: 'koa'
+  }
+]
 
 export const TEMP_HOME = ".cli-bu";
 
@@ -36,6 +48,10 @@ export const NODE_URL = {
     url: "https://gitee.com/yeshaojun/koa-service-template.git",
     branch: "mongodb",
   },
+  nest: {
+    url: "https://gitee.com/yeshaojun/nest_template.git",
+    branch: "master"
+  }
 };
 
 export const COLORS = [

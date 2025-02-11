@@ -17,8 +17,8 @@
     "test": "node ./__tests__/init.test.js"
   },
   "dependencies": {
-    "@bubu-cli/command": "^0.1.9",
-    "@bubu-cli/utils": "^0.1.9",
+    "@bubu-cli/command": "workspace:*",
+    "@bubu-cli/utils": "workspace:*",
     "ejs": "^3.1.9",
     "execa": "^7.1.1",
     "fs-extra": "^11.1.1",

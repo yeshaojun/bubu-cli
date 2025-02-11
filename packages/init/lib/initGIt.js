@@ -5,7 +5,7 @@ import chalk from "chalk";
 import { ADD_TYPE_NODE } from "./config.js";
 import { log } from "@bubu-cli/utils";
 export default async function initGit(selectTemplate) {
-  const { name, template } = selectTemplate;
+  const { name, template, nodeFramework } = selectTemplate;
   const rootDir = process.cwd();
   const installDir = path.resolve(`${rootDir}/${name}`);
   const installCommand = "git";
@@ -33,7 +33,7 @@ build
   log.info(
     `npm run ${
       selectTemplate.type === ADD_TYPE_NODE
-        ? "serve"
+        ? (nodeFramework === 'nest' ? 'start': 'serve')
         : template.value === "vue-template"
         ? "dev"
         : "start"

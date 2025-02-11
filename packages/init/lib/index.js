@@ -4,7 +4,7 @@ import downloadTemplate from "./downloadTemplate.js";
 import installTemplate from "./installTemplate.js";
 import initGit from "./initGIt.js";
 import installLib from "./installLib.js";
-import cloneNode from "./clone.js";
+import { cloneNode, cloneNest} from "./clone.js";
 import { makeConfirm } from "@bubu-cli/utils";
 import { ADD_TYPE_PROJECT, ADD_TYPE_NODE } from "./config.js";
 class InitCommand extends Command {
@@ -24,15 +24,18 @@ class InitCommand extends Command {
   }
 
   async action([name, option]) {
-    console.log("template", option);
     // 1.选择项目模板，生成项目
     const selectTemplate = await createTemplate(name, option);
     // 2. 自定义选择需要安装的依赖
-    const result = await installLib(selectTemplate);
-    if (selectTemplate?.type === ADD_TYPE_NODE) {
-      await cloneNode(result, selectTemplate.name, option);
-    } else if (selectTemplate?.type === ADD_TYPE_PROJECT) {
-      // web
+    if(selectTemplate.type === ADD_TYPE_NODE) {
+      if(selectTemplate.nodeFramework === "koa") {
+        const result = await installLib(selectTemplate);
+        await cloneNode(result, selectTemplate.name, option);
+      } else {
+        await cloneNest(selectTemplate.name, option);
+      }
+    } else {
+      const result = await installLib(selectTemplate);
       // 3.下载项目到缓存目录
       await downloadTemplate(selectTemplate);
       // 4，安装项目模板到项目目录

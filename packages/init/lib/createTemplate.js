@@ -7,6 +7,7 @@ import {
   ADD_TEMPLATE,
   ADD_TYPE,
   TEMP_HOME,
+  NODE_TYPE
 } from "./config.js";
 // 获取创建类型
 function getAddType() {
@@ -27,6 +28,14 @@ function getAddName() {
         return "项目名称必须输入:";
       }
     },
+  });
+}
+
+function getNodeFramework() {
+  return makeList({
+    choices: NODE_TYPE,
+    message: "请选择node框架类型",
+    defaultValue: ADD_TYPE_PROJECT,
   });
 }
 
@@ -60,9 +69,11 @@ export default async function createTemplate(name, opts) {
     };
   } else if (addType === ADD_TYPE_NODE) {
     const addName = await getAddName();
+    const nodeFramework = await getNodeFramework();
     return {
       type: addType,
       name: addName,
+      nodeFramework
     };
   }
 }

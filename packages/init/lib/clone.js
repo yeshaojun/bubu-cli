@@ -25,7 +25,7 @@ async function download(type, name) {
   spinner.stop();
 }
 
-export default async function cloneNode(type, name, opt) {
+export  async function cloneNode(type, name, opt) {
   const rootDir = process.cwd();
   if (pathExistsSync(path.resolve(`${rootDir}/${name}`))) {
     if (opt.force) {
@@ -36,5 +36,19 @@ export default async function cloneNode(type, name, opt) {
     }
   } else {
     await download(type, name);
+  }
+}
+
+export async function cloneNest(name, opt) {
+  const rootDir = process.cwd();
+  if (pathExistsSync(path.resolve(`${rootDir}/${name}`))) {
+    if (opt.force) {
+      fse.removeSync(path.resolve(`${rootDir}/${name}`));
+      await download('nest', name);
+    } else {
+      log.error("目录已存在");
+    }
+  } else {
+    await download('nest', name);
   }
 }
